@@ -1,70 +1,565 @@
-<!DOCTYPE html><html lang="fr"><head><meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Association Cheerful Ladies</title>
-<meta name="theme-color" content="#9d2a6b"><meta name="apple-mobile-web-app-capable" content="yes"><link rel="manifest" href="manifest.webmanifest"><link rel="icon" href="icon-192.png"><link rel="apple-touch-icon" href="icon-192.png">
-<meta name="application-name" content="Association Cheerful Ladies"><meta name="apple-mobile-web-app-title" content="Association Cheerful Ladies">
-<style>
-:root{--bg:#fbf6f8;--cd:#fff;--tx:#2a1824;--mu:#7a6670;--ac:#9d2a6b;--a2:#f6e1ec;--bd:#e6d3dc;--gd:#b8860b;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light}
-@media(prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#1a1117;--cd:#26191f;--tx:#f4e8ee;--mu:#b9a2ad;--ac:#c4528c;--a2:#3a2230;--bd:#4a3340;--gd:#e0b44c;color-scheme:dark}}
-:root[data-theme="dark"]{--bg:#1a1117;--cd:#26191f;--tx:#f4e8ee;--mu:#b9a2ad;--ac:#c4528c;--a2:#3a2230;--bd:#4a3340;--gd:#e0b44c;color-scheme:dark}
-html{scroll-padding-top:env(safe-area-inset-top,0px)}
-body{margin:0;background:var(--bg);color:var(--tx);font:15px/1.45 system-ui,"Segoe UI",Roboto,Arial,sans-serif}
-body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--ac)}
-header{position:sticky;top:env(safe-area-inset-top,0px);z-index:9;background:var(--ac);color:#fff;padding:10px 14px}
-h1{margin:0;font-size:17px;letter-spacing:.5px;text-transform:uppercase}
-nav{display:flex;gap:6px;margin-top:8px;align-items:center;flex-wrap:wrap}
-nav button{background:rgba(255,255,255,.18);color:#fff;border:0;border-radius:20px;padding:7px 14px;font-weight:600;cursor:pointer}
-nav button.on{background:#fff;color:var(--ac)}
-#st{margin-left:auto;font-size:12px;opacity:.9}#st.err{color:#ffd0d0;font-weight:700}
-main{max-width:1100px;margin:0 auto;padding:12px}
-.card{background:var(--cd);border:1px solid var(--bd);border-radius:12px;padding:12px;margin-bottom:12px}
-h2{margin:0 0 8px;font-size:17px;color:var(--ac)}
-input{font:inherit;color:var(--tx);background:var(--bg);border:1px solid var(--bd);border-radius:8px;padding:7px 8px;max-width:100%}
-label{display:block;margin:6px 0;color:var(--mu);font-size:13px}label input{display:block;width:100%;margin-top:3px}
-h2 input{font-size:15px}
-.w{overflow-x:auto;border:1px solid var(--bd);border-radius:10px;max-height:70vh}
-table{border-collapse:collapse;width:100%;font-size:13px}
-th,td{border:1px solid var(--bd);padding:3px 5px;text-align:right;white-space:nowrap}
-th{background:var(--a2);color:var(--ac);position:sticky;top:0;z-index:2}
-td.n{text-align:left;position:sticky;left:0;background:var(--cd);font-weight:600;z-index:1}
-th.n{left:0;z-index:3;text-align:left}
-td input{width:76px;text-align:right;padding:5px}
-td.tt,th.tt{font-weight:700;color:var(--ac)}
-tfoot td{background:var(--a2);font-weight:700;position:sticky;bottom:0}
-.g{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:8px}
-.k{background:var(--a2);border-radius:10px;padding:9px 11px}.k span{display:block;font-size:12px;color:var(--mu)}.k b{font-size:17px;color:var(--ac)}
-button.b{background:var(--ac);color:#fff;border:0;border-radius:10px;padding:9px 14px;font-weight:600;cursor:pointer;margin:3px 4px 3px 0}
-button.b.s{background:var(--a2);color:var(--ac)}
-.mg{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:8px}
-.mg button{background:var(--cd);border:1px solid var(--bd);border-radius:10px;padding:10px;text-align:left;color:var(--tx);cursor:pointer}
-.mg button.on{border-color:var(--ac);box-shadow:0 0 0 2px var(--ac) inset}.mg small{display:block;color:var(--mu)}
-.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}.cal i{font-style:normal;text-align:center;font-size:12px;color:var(--mu)}
-.cal button{aspect-ratio:1;border:1px solid var(--bd);background:var(--cd);color:var(--tx);border-radius:8px;cursor:pointer;font-weight:600}
-.cal button.h{background:var(--ac);color:#fff}.cal button.t{outline:2px solid var(--gd)}
-footer{text-align:center;color:var(--mu);padding:14px;font-size:13px}
-#lock{position:fixed;inset:0;z-index:50;background:var(--bg);display:flex;align-items:center;justify-content:center;padding:20px}
-#lock div{background:var(--cd);border:1px solid var(--bd);border-radius:16px;padding:24px;max-width:340px;width:100%;text-align:center}
-#lock h2{font-size:19px}#lock input{width:100%;margin:10px 0;text-align:center}
-.er{color:#c0392b;min-height:18px;font-size:13px}
-.lk{color:var(--ac);font-weight:700}#mf{margin-bottom:8px}input[readonly]{opacity:.7}
-main{max-width:none;padding:6px}
-.card{padding:8px;margin-bottom:8px;border-radius:10px}
-header{padding:5px 10px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
-h1{font-size:14px;white-space:nowrap}h1 .sm{display:none}
-nav{margin:0;gap:4px;flex-wrap:nowrap}nav button{padding:5px 11px;font-size:13px}
-#st{position:absolute;right:10px;bottom:1px;margin:0;font-size:10px}
-footer{padding:6px}
-.ih label{display:flex;align-items:center;gap:8px;margin:4px 0}.ih label input{flex:1;width:auto;margin:0}
-.w{max-height:calc(100vh - 240px);max-height:calc(100dvh - 240px);min-height:220px;scroll-padding-left:130px;scroll-padding-right:24px}
-table{font-size:12.5px}th,td{padding:2px 4px}
-td input{width:100%;min-width:58px;padding:4px 5px}td.n,th.n{min-width:96px}
-tr:focus-within td,tr:focus-within td.n{background:var(--a2)}
-.card.np button.b{padding:7px 11px;margin:2px 3px 2px 0}
-.fs header,.fs footer,.fs .ih{display:none}.fs body::before{display:none}
-.fs .w{max-height:calc(100vh - 80px);max-height:calc(100dvh - 80px - env(safe-area-inset-top,0px))}
-@media(max-width:640px){h1{font-size:12px;letter-spacing:0}h1 .lg{display:none}h1 .sm{display:inline}nav button{padding:5px 8px;font-size:12px}main{padding:3px}.card{padding:6px;margin-bottom:6px}.dl{display:none}.w{max-height:calc(100vh - 200px);max-height:calc(100dvh - 200px)}td input{min-width:60px;font-size:16px}}
-@media print{header nav,button,.np,#lock{display:none!important}header{position:static}.w{max-height:none;overflow:visible}td.n,th{position:static}}
-</style></head><body>
+<!DOCTYPE html><html lang="fr"><head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Association Cheerful Ladies</title>
+    <link rel="icon" type="image/png" href="file_00000002f14820ead40dedcda77eb54.png">
+    <link rel="apple-touch-icon" href="file_00000002f14820ead40dedcda77eb54.png">
+    <meta name="theme-color" content="#9d2a6b">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <link rel="manifest" href="manifest.webmanifest">
+    <link rel="icon" href="icon-192.png">
+    <link rel="apple-touch-icon" href="icon-192.png">
+    <meta name="application-name" content="Association Cheerful Ladies">
+    <meta name="apple-mobile-web-app-title" content="Association Cheerful Ladies">
+    <style>
+        :root {
+            --bg: #fbf6f8;
+            --cd: #fff;
+            --tx: #2a1824;
+            --mu: #7a6670;
+            --ac: #9d2a6b;
+            --a2: #f6e1ec;
+            --bd: #e6d3dc;
+            --gd: #b8860b;
+            box-sizing: border-box;
+            padding-top: env(safe-area-inset-top,0px);
+            padding-bottom: env(safe-area-inset-bottom,0px);
+            color-scheme: light
+        }
+
+        @media(prefers-color-scheme:dark) {
+            :root:not([data-theme="light"]) {
+                --bg: #1a1117;
+                --cd: #26191f;
+                --tx: #f4e8ee;
+                --mu: #b9a2ad;
+                --ac: #c4528c;
+                --a2: #3a2230;
+                --bd: #4a3340;
+                --gd: #e0b44c;
+                color-scheme: dark
+            }
+        }
+
+        :root[data-theme="dark"] {
+            --bg: #1a1117;
+            --cd: #26191f;
+            --tx: #f4e8ee;
+            --mu: #b9a2ad;
+            --ac: #c4528c;
+            --a2: #3a2230;
+            --bd: #4a3340;
+            --gd: #e0b44c;
+            color-scheme: dark
+        }
+
+        html {
+            scroll-padding-top: env(safe-area-inset-top,0px)
+        }
+
+        body {
+            margin: 0;
+            background: var(--bg);
+            color: var(--tx);
+            font: 15px/1.45 system-ui,"Segoe UI",Roboto,Arial,sans-serif
+        }
+
+            body::before {
+                content: "";
+                position: fixed;
+                inset: 0 0 auto;
+                height: env(safe-area-inset-top,0px);
+                z-index: 10;
+                background: var(--ac)
+            }
+
+        header {
+            position: sticky;
+            top: env(safe-area-inset-top,0px);
+            z-index: 9;
+            background: var(--ac);
+            color: #fff;
+            padding: 10px 14px
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 17px;
+            letter-spacing: .5px;
+            text-transform: uppercase
+        }
+
+        nav {
+            display: flex;
+            gap: 6px;
+            margin-top: 8px;
+            align-items: center;
+            flex-wrap: wrap
+        }
+
+            nav button {
+                background: rgba(255,255,255,.18);
+                color: #fff;
+                border: 0;
+                border-radius: 20px;
+                padding: 7px 14px;
+                font-weight: 600;
+                cursor: pointer
+            }
+
+                nav button.on {
+                    background: #fff;
+                    color: var(--ac)
+                }
+
+        #st {
+            margin-left: auto;
+            font-size: 12px;
+            opacity: .9
+        }
+
+            #st.err {
+                color: #ffd0d0;
+                font-weight: 700
+            }
+
+        main {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 12px
+        }
+
+        .card {
+            background: var(--cd);
+            border: 1px solid var(--bd);
+            border-radius: 12px;
+            padding: 12px;
+            margin-bottom: 12px
+        }
+
+        h2 {
+            margin: 0 0 8px;
+            font-size: 17px;
+            color: var(--ac)
+        }
+
+        input {
+            font: inherit;
+            color: var(--tx);
+            background: var(--bg);
+            border: 1px solid var(--bd);
+            border-radius: 8px;
+            padding: 7px 8px;
+            max-width: 100%
+        }
+
+        label {
+            display: block;
+            margin: 6px 0;
+            color: var(--mu);
+            font-size: 13px
+        }
+
+            label input {
+                display: block;
+                width: 100%;
+                margin-top: 3px
+            }
+
+        h2 input {
+            font-size: 15px
+        }
+
+        .w {
+            overflow-x: auto;
+            border: 1px solid var(--bd);
+            border-radius: 10px;
+            max-height: 70vh
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            font-size: 13px
+        }
+
+        th, td {
+            border: 1px solid var(--bd);
+            padding: 3px 5px;
+            text-align: right;
+            white-space: nowrap
+        }
+
+        th {
+            background: var(--a2);
+            color: var(--ac);
+            position: sticky;
+            top: 0;
+            z-index: 2
+        }
+
+        td.n {
+            text-align: left;
+            position: sticky;
+            left: 0;
+            background: var(--cd);
+            font-weight: 600;
+            z-index: 1
+        }
+
+        th.n {
+            left: 0;
+            z-index: 3;
+            text-align: left
+        }
+
+        td input {
+            width: 76px;
+            text-align: right;
+            padding: 5px
+        }
+
+        td.tt, th.tt {
+            font-weight: 700;
+            color: var(--ac)
+        }
+
+        tfoot td {
+            background: var(--a2);
+            font-weight: 700;
+            position: sticky;
+            bottom: 0
+        }
+
+        .g {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
+            gap: 8px
+        }
+
+        .k {
+            background: var(--a2);
+            border-radius: 10px;
+            padding: 9px 11px
+        }
+
+            .k span {
+                display: block;
+                font-size: 12px;
+                color: var(--mu)
+            }
+
+            .k b {
+                font-size: 17px;
+                color: var(--ac)
+            }
+
+        button.b {
+            background: var(--ac);
+            color: #fff;
+            border: 0;
+            border-radius: 10px;
+            padding: 9px 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin: 3px 4px 3px 0
+        }
+
+            button.b.s {
+                background: var(--a2);
+                color: var(--ac)
+            }
+
+        .mg {
+            display: grid;
+            grid-template-columns: repeat(auto-fit,minmax(130px,1fr));
+            gap: 8px
+        }
+
+            .mg button {
+                background: var(--cd);
+                border: 1px solid var(--bd);
+                border-radius: 10px;
+                padding: 10px;
+                text-align: left;
+                color: var(--tx);
+                cursor: pointer
+            }
+
+                .mg button.on {
+                    border-color: var(--ac);
+                    box-shadow: 0 0 0 2px var(--ac) inset
+                }
+
+            .mg small {
+                display: block;
+                color: var(--mu)
+            }
+
+        .cal {
+            display: grid;
+            grid-template-columns: repeat(7,1fr);
+            gap: 4px
+        }
+
+            .cal i {
+                font-style: normal;
+                text-align: center;
+                font-size: 12px;
+                color: var(--mu)
+            }
+
+            .cal button {
+                aspect-ratio: 1;
+                border: 1px solid var(--bd);
+                background: var(--cd);
+                color: var(--tx);
+                border-radius: 8px;
+                cursor: pointer;
+                font-weight: 600
+            }
+
+                .cal button.h {
+                    background: var(--ac);
+                    color: #fff
+                }
+
+                .cal button.t {
+                    outline: 2px solid var(--gd)
+                }
+
+        footer {
+            text-align: center;
+            color: var(--mu);
+            padding: 14px;
+            font-size: 13px
+        }
+
+        #lock {
+            position: fixed;
+            inset: 0;
+            z-index: 50;
+            background: var(--bg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px
+        }
+
+            #lock div {
+                background: var(--cd);
+                border: 1px solid var(--bd);
+                border-radius: 16px;
+                padding: 24px;
+                max-width: 340px;
+                width: 100%;
+                text-align: center
+            }
+
+            #lock h2 {
+                font-size: 19px
+            }
+
+            #lock input {
+                width: 100%;
+                margin: 10px 0;
+                text-align: center
+            }
+
+        .er {
+            color: #c0392b;
+            min-height: 18px;
+            font-size: 13px
+        }
+
+        .lk {
+            color: var(--ac);
+            font-weight: 700
+        }
+
+        #mf {
+            margin-bottom: 8px
+        }
+
+        input[readonly] {
+            opacity: .7
+        }
+
+        main {
+            max-width: none;
+            padding: 6px
+        }
+
+        .card {
+            padding: 8px;
+            margin-bottom: 8px;
+            border-radius: 10px
+        }
+
+        header {
+            padding: 5px 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            flex-wrap: wrap
+        }
+
+        h1 {
+            font-size: 14px;
+            white-space: nowrap
+        }
+
+            h1 .sm {
+                display: none
+            }
+
+        nav {
+            margin: 0;
+            gap: 4px;
+            flex-wrap: nowrap
+        }
+
+            nav button {
+                padding: 5px 11px;
+                font-size: 13px
+            }
+
+        #st {
+            position: absolute;
+            right: 10px;
+            bottom: 1px;
+            margin: 0;
+            font-size: 10px
+        }
+
+        footer {
+            padding: 6px
+        }
+
+        .ih label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin: 4px 0
+        }
+
+            .ih label input {
+                flex: 1;
+                width: auto;
+                margin: 0
+            }
+
+        .w {
+            max-height: calc(100vh - 240px);
+            max-height: calc(100dvh - 240px);
+            min-height: 220px;
+            scroll-padding-left: 130px;
+            scroll-padding-right: 24px
+        }
+
+        table {
+            font-size: 12.5px
+        }
+
+        th, td {
+            padding: 2px 4px
+        }
+
+            td input {
+                width: 100%;
+                min-width: 58px;
+                padding: 4px 5px
+            }
+
+            td.n, th.n {
+                min-width: 96px
+            }
+
+        tr:focus-within td, tr:focus-within td.n {
+            background: var(--a2)
+        }
+
+        .card.np button.b {
+            padding: 7px 11px;
+            margin: 2px 3px 2px 0
+        }
+
+        .fs header, .fs footer, .fs .ih {
+            display: none
+        }
+
+        .fs body::before {
+            display: none
+        }
+
+        .fs .w {
+            max-height: calc(100vh - 80px);
+            max-height: calc(100dvh - 80px - env(safe-area-inset-top,0px))
+        }
+
+        @media(max-width:640px) {
+            h1 {
+                font-size: 12px;
+                letter-spacing: 0
+            }
+
+                h1 .lg {
+                    display: none
+                }
+
+                h1 .sm {
+                    display: inline
+                }
+
+            nav button {
+                padding: 5px 8px;
+                font-size: 12px
+            }
+
+            main {
+                padding: 3px
+            }
+
+            .card {
+                padding: 6px;
+                margin-bottom: 6px
+            }
+
+            .dl {
+                display: none
+            }
+
+            .w {
+                max-height: calc(100vh - 200px);
+                max-height: calc(100dvh - 200px)
+            }
+
+            td input {
+                min-width: 60px;
+                font-size: 16px
+            }
+        }
+
+        @media print {
+            header nav, button, .np, #lock {
+                display: none !important
+            }
+
+            header {
+                position: static
+            }
+
+            .w {
+                max-height: none;
+                overflow: visible
+            }
+
+            td.n, th {
+                position: static
+            }
+        }
+    </style>
+</head><body>
 <div id="lock"><div><h2>Association<br>Cheerful Ladies Bertoua</h2><p style="color:var(--mu);margin:0">Espace sécurisé</p>
 <input id="pw" type="password" placeholder="Mot de passe" autocomplete="current-password"><div class="er" id="er"></div>
 <button class="b" data-a="go" style="width:100%">Ouvrir</button><footer>@stpg</footer></div></div>
